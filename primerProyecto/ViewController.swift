@@ -11,11 +11,15 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var lblPrueba:UILabel?
+    @IBOutlet var txtUser:UITextField?
+    @IBOutlet var txtPass:UITextField?
+    @IBOutlet var btnLogin:UIButton?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        lblPrueba?.text = "HELLO!"
+        lblPrueba?.text = "Bienvenido!"
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +27,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func login(){
+        //print("Hey Whats up!!"+(txtUser?.text)!)
+        if txtUser?.text == "Jorge" && txtPass?.text == "Vazquez"{
+            self.performSegue(withIdentifier: "trLogin", sender: self)
+        }
+    }
 }
 
