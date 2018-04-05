@@ -11,6 +11,12 @@
 		6C24818D2076285200BC8C58 /* VCItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24818C2076285200BC8C58 /* VCItem2.swift */; };
 		6C24818F2076407D00BC8C58 /* MiCelda1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24818E2076407D00BC8C58 /* MiCelda1.swift */; };
 		6C248199207652DA00BC8C58 /* VCCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C248198207652DA00BC8C58 /* VCCollection.swift */; };
+		6C24819B20765D5B00BC8C58 /* CVCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24819A20765D5B00BC8C58 /* CVCollection.swift */; };
+		6C24819D2076607800BC8C58 /* adidas.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C24819C2076607700BC8C58 /* adidas.png */; };
+		6C2481A12076609100BC8C58 /* chanel.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2481A02076609100BC8C58 /* chanel.png */; };
+		6C2481A32076609A00BC8C58 /* hugo.png_1024 in Resources */ = {isa = PBXBuildFile; fileRef = 6C2481A22076609A00BC8C58 /* hugo.png_1024 */; };
+		6C2481A5207660A300BC8C58 /* lg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2481A4207660A300BC8C58 /* lg.png */; };
+		6C2481A7207660AB00BC8C58 /* nike.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2481A6207660AB00BC8C58 /* nike.png */; };
 		6CEEC8622063B723006DD6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEC8612063B723006DD6F6 /* AppDelegate.swift */; };
 		6CEEC8642063B723006DD6F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEC8632063B723006DD6F6 /* ViewController.swift */; };
 		6CEEC8672063B723006DD6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CEEC8652063B723006DD6F6 /* Main.storyboard */; };
@@ -24,6 +30,12 @@
 		6C24818C2076285200BC8C58 /* VCItem2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCItem2.swift; sourceTree = "<group>"; };
 		6C24818E2076407D00BC8C58 /* MiCelda1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCelda1.swift; sourceTree = "<group>"; };
 		6C248198207652DA00BC8C58 /* VCCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCollection.swift; sourceTree = "<group>"; };
+		6C24819A20765D5B00BC8C58 /* CVCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCollection.swift; sourceTree = "<group>"; };
+		6C24819C2076607700BC8C58 /* adidas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = adidas.png; path = ../../adidas.png; sourceTree = "<group>"; };
+		6C2481A02076609100BC8C58 /* chanel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chanel.png; path = ../../chanel.png; sourceTree = "<group>"; };
+		6C2481A22076609A00BC8C58 /* hugo.png_1024 */ = {isa = PBXFileReference; lastKnownFileType = file; name = hugo.png_1024; path = ../../hugo.png_1024; sourceTree = "<group>"; };
+		6C2481A4207660A300BC8C58 /* lg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lg.png; path = ../../lg.png; sourceTree = "<group>"; };
+		6C2481A6207660AB00BC8C58 /* nike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nike.png; path = ../../nike.png; sourceTree = "<group>"; };
 		6CEEC85E2063B723006DD6F6 /* primerProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = primerProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CEEC8612063B723006DD6F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CEEC8632063B723006DD6F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +78,11 @@
 		6CEEC8602063B723006DD6F6 /* primerProyecto */ = {
 			isa = PBXGroup;
 			children = (
+				6C2481A6207660AB00BC8C58 /* nike.png */,
+				6C2481A4207660A300BC8C58 /* lg.png */,
+				6C2481A22076609A00BC8C58 /* hugo.png_1024 */,
+				6C2481A02076609100BC8C58 /* chanel.png */,
+				6C24819C2076607700BC8C58 /* adidas.png */,
 				6CEEC8762063BFE3006DD6F6 /* primerProyecto.entitlements */,
 				6CEEC8612063B723006DD6F6 /* AppDelegate.swift */,
 				6CEEC8632063B723006DD6F6 /* ViewController.swift */,
@@ -78,6 +95,7 @@
 				6C24818C2076285200BC8C58 /* VCItem2.swift */,
 				6C24818E2076407D00BC8C58 /* MiCelda1.swift */,
 				6C248198207652DA00BC8C58 /* VCCollection.swift */,
+				6C24819A20765D5B00BC8C58 /* CVCollection.swift */,
 			);
 			path = primerProyecto;
 			sourceTree = "<group>";
@@ -153,9 +171,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C2481A12076609100BC8C58 /* chanel.png in Resources */,
+				6C2481A5207660A300BC8C58 /* lg.png in Resources */,
+				6C2481A7207660AB00BC8C58 /* nike.png in Resources */,
+				6C2481A32076609A00BC8C58 /* hugo.png_1024 in Resources */,
 				6CEEC86F2063B723006DD6F6 /* LaunchScreen.storyboard in Resources */,
 				6CEEC86C2063B723006DD6F6 /* Assets.xcassets in Resources */,
 				6CEEC8672063B723006DD6F6 /* Main.storyboard in Resources */,
+				6C24819D2076607800BC8C58 /* adidas.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +191,7 @@
 			files = (
 				6CEEC86A2063B723006DD6F6 /* primerProyecto.xcdatamodeld in Sources */,
 				6C248199207652DA00BC8C58 /* VCCollection.swift in Sources */,
+				6C24819B20765D5B00BC8C58 /* CVCollection.swift in Sources */,
 				6C20A75F2073ACD5006BF989 /* VCRegister.swift in Sources */,
 				6CEEC8642063B723006DD6F6 /* ViewController.swift in Sources */,
 				6CEEC8622063B723006DD6F6 /* AppDelegate.swift in Sources */,

@@ -28,7 +28,24 @@ class VCCollection: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell:UICollectionViewCell=collectionView.dequeueReusableCell(withReuseIdentifier: "MiCelda2", for: indexPath)
+        let cell:CVCollection=collectionView.dequeueReusableCell(withReuseIdentifier: "MiCelda2", for: indexPath) as! CVCollection
+        if indexPath.row == 0{
+            cell.lblCollection?.text="Jorge"
+            cell.imagen?.image=UIImage(named:"nike.png")
+        }else if indexPath.row == 1{
+            cell.lblCollection?.text="Maria"
+            cell.imagen?.image=UIImage(named:"lg.png")
+        }else if indexPath.row == 2{
+            cell.lblCollection?.text="Elena"
+            cell.imagen?.image=UIImage(named:"hugo.png_1024")
+        }else if indexPath.row == 3{
+            cell.lblCollection?.text="Pedro"
+            cell.imagen?.image=UIImage(named:"chanel.png")
+        }else if indexPath.row == 4{
+            cell.lblCollection?.text="Sara"
+            cell.imagen?.image=UIImage(named:"adidas.png")
+        }
+        
         return cell
     }
     
