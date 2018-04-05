@@ -1,24 +1,15 @@
 //
-//  VCRegister.swift
+//  Collection.swift
 //  primerProyecto
 //
-//  Created by JORGE VAZQUEZ REQUEJO on 3/4/18.
+//  Created by JORGE VAZQUEZ REQUEJO on 5/4/18.
 //  Copyright © 2018 JORGE VAZQUEZ REQUEJO. All rights reserved.
 //
 
 import UIKit
 
-class VCRegister: UIViewController {
+class Collection: UIViewController {
 
-    
-    @IBOutlet var txtNombre:UITextField?
-    @IBOutlet var txtContrasena:UITextField?
-    @IBOutlet var txtRepetirContrasena:UITextField?
-    @IBOutlet var txtEmail:UITextField?
-    @IBOutlet var btnAceptar:UIButton?
-    @IBOutlet var btnCancelar:UIButton?
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,11 +21,7 @@ class VCRegister: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*@IBAction func login(){
-        if !txtNombre?.text?. && !txtApellidos?.text?.isEmpty{
-            self.performSegue(withIdentifier: "trLogin", sender: self)
-        }
-    }*/
+
     /*
     // MARK: - Navigation
 

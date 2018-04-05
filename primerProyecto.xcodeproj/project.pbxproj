@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C20A75F2073ACD5006BF989 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C20A75E2073ACD5006BF989 /* VCRegister.swift */; };
+		6C24818D2076285200BC8C58 /* VCItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24818C2076285200BC8C58 /* VCItem2.swift */; };
+		6C24818F2076407D00BC8C58 /* MiCelda1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24818E2076407D00BC8C58 /* MiCelda1.swift */; };
+		6C248199207652DA00BC8C58 /* VCCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C248198207652DA00BC8C58 /* VCCollection.swift */; };
 		6CEEC8622063B723006DD6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEC8612063B723006DD6F6 /* AppDelegate.swift */; };
 		6CEEC8642063B723006DD6F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEEC8632063B723006DD6F6 /* ViewController.swift */; };
 		6CEEC8672063B723006DD6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CEEC8652063B723006DD6F6 /* Main.storyboard */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C20A75E2073ACD5006BF989 /* VCRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCRegister.swift; sourceTree = "<group>"; };
+		6C24818C2076285200BC8C58 /* VCItem2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCItem2.swift; sourceTree = "<group>"; };
+		6C24818E2076407D00BC8C58 /* MiCelda1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCelda1.swift; sourceTree = "<group>"; };
+		6C248198207652DA00BC8C58 /* VCCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCollection.swift; sourceTree = "<group>"; };
 		6CEEC85E2063B723006DD6F6 /* primerProyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = primerProyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CEEC8612063B723006DD6F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CEEC8632063B723006DD6F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +74,10 @@
 				6CEEC86D2063B723006DD6F6 /* LaunchScreen.storyboard */,
 				6CEEC8702063B723006DD6F6 /* Info.plist */,
 				6CEEC8682063B723006DD6F6 /* primerProyecto.xcdatamodeld */,
+				6C20A75E2073ACD5006BF989 /* VCRegister.swift */,
+				6C24818C2076285200BC8C58 /* VCItem2.swift */,
+				6C24818E2076407D00BC8C58 /* MiCelda1.swift */,
+				6C248198207652DA00BC8C58 /* VCCollection.swift */,
 			);
 			path = primerProyecto;
 			sourceTree = "<group>";
@@ -155,8 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CEEC86A2063B723006DD6F6 /* primerProyecto.xcdatamodeld in Sources */,
+				6C248199207652DA00BC8C58 /* VCCollection.swift in Sources */,
+				6C20A75F2073ACD5006BF989 /* VCRegister.swift in Sources */,
 				6CEEC8642063B723006DD6F6 /* ViewController.swift in Sources */,
 				6CEEC8622063B723006DD6F6 /* AppDelegate.swift in Sources */,
+				6C24818D2076285200BC8C58 /* VCItem2.swift in Sources */,
+				6C24818F2076407D00BC8C58 /* MiCelda1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

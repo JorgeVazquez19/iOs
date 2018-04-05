@@ -1,24 +1,17 @@
 //
-//  VCRegister.swift
+//  VCCollection.swift
 //  primerProyecto
 //
-//  Created by JORGE VAZQUEZ REQUEJO on 3/4/18.
+//  Created by JORGE VAZQUEZ REQUEJO on 5/4/18.
 //  Copyright © 2018 JORGE VAZQUEZ REQUEJO. All rights reserved.
 //
 
 import UIKit
 
-class VCRegister: UIViewController {
+class VCCollection: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet var colPrincipal:UICollectionView?
 
-    
-    @IBOutlet var txtNombre:UITextField?
-    @IBOutlet var txtContrasena:UITextField?
-    @IBOutlet var txtRepetirContrasena:UITextField?
-    @IBOutlet var txtEmail:UITextField?
-    @IBOutlet var btnAceptar:UIButton?
-    @IBOutlet var btnCancelar:UIButton?
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,11 +23,16 @@ class VCRegister: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*@IBAction func login(){
-        if !txtNombre?.text?. && !txtApellidos?.text?.isEmpty{
-            self.performSegue(withIdentifier: "trLogin", sender: self)
-        }
-    }*/
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell:UICollectionViewCell=collectionView.dequeueReusableCell(withReuseIdentifier: "MiCelda2", for: indexPath)
+        return cell
+    }
+    
+
     /*
     // MARK: - Navigation
 
