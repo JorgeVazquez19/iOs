@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //lblPrueba?.text = "Bienvenido!"
+        txtUser?.text = DataHolder.sharedInstance.sNick
     }
 
     override func didReceiveMemoryWarning() {

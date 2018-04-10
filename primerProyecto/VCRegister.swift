@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class VCRegister: UIViewController {
 
@@ -29,7 +30,15 @@ class VCRegister: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    @IBAction func clickAceptar(){
+        Auth.auth().createUser(withEmail: (txtNombre?.text)!, password: (txtContrasena?.text)!) { (user, error) in
+            if user != nil{
+                print("Te Registraste")
+            }else{
+                print(error!)
+            }
+        }
+    }
     /*@IBAction func login(){
         if !txtNombre?.text?. && !txtApellidos?.text?.isEmpty{
             self.performSegue(withIdentifier: "trLogin", sender: self)

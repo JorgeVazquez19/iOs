@@ -88,6 +88,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Aceptar"/>
                                 <connections>
+                                    <action selector="clickAceptar" destination="brc-MH-JzT" eventType="touchUpInside" id="NkA-HS-m3R"/>
                                     <segue destination="u3l-LF-THp" kind="show" id="QLJ-mm-4MW"/>
                                 </connections>
                             </button>
