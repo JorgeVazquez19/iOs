@@ -7,20 +7,37 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
     
     @IBOutlet var txtUser:UITextField?
     @IBOutlet var txtPass:UITextField?
     @IBOutlet var btnLogin:UIButton?
+    @IBOutlet var lblReintentar:UILabel?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //lblPrueba?.text = "Bienvenido!"
-        txtUser?.text = DataHolder.sharedInstance.sNick
+       // txtUser?.text = DataHolder.sharedInstance.sNick
+        
+        /*Auth.auth().addStateDidChangeListener{ (auth, user) in
+            // ...
+            if user != nil{
+                self.performSegue(withIdentifier: "trLogin", sender: self)
+            }
+        }*/
     }
+    /*
+    do{
+        try Auth.auth().signOut()
+    }catch{
+    
+    }*/
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,10 +46,45 @@ class ViewController: UIViewController {
 
     @IBAction func login(){
         //print("Hey Whats up!!"+(txtUser?.text)!)
-        if txtUser?.text == "Jorge Vazquez" && txtPass?.text == "123456789"{
-            self.performSegue(withIdentifier: "trLogin", sender: self)
+        Auth.auth().signIn(withEmail: (txtUser?.text)!, password: (txtPass?.text)!) { (user, error) in
+            if user != nil{
+                let ruta =
+                DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!)
+                
+                ruta?.getDocument { (document, error) in
+                    if document != nil{
+                        DataHolder.sharedInstance.miPerfil.setMap(valores:document?.data())
+                        self.performSegue(withIdentifier: "trControlador", sender: self)
+                    }else{
+                        print(error!)
+                        
+    
+                    }
+                }
+                
+                
+            }else{
+                print("NO SE HA LOGUEADO")
+                print(error!)
+            }
         }
-    }
+        //if txtUser?.text == "Jorge Vazquez" && txtPass?.text == "123456789"{
+        //    self.performSegue(withIdentifier: "trLogin", sender: self)
+       // }
+     }
+        /*func alerta(){
+            let alert = UIAlertController(
+                title: nil,
+                message: "Introduce tus datos por favor",
+                preferredStyle: .alert)
+            let reintentar = UIAlertAction(                      //funcion alerta
+                title: "Aceptar",
+                style: .default) { (UIAlertAction) in
+                    self.login()
+            }
+            alert.addAction(reintentar)
+            self.present(alert, animated: true, completion: nil)
+        }*/
     @IBAction func register(){
         self.performSegue(withIdentifier: "trRegistro", sender: self)
     }

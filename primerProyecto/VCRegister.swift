@@ -14,8 +14,8 @@ class VCRegister: UIViewController {
     
     @IBOutlet var txtNombre:UITextField?
     @IBOutlet var txtContrasena:UITextField?
-    @IBOutlet var txtRepetirContrasena:UITextField?
-    @IBOutlet var txtEmail:UITextField?
+    //@IBOutlet var txtRepetirContrasena:UITextField?
+    //@IBOutlet var txtEmail:UITextField?
     @IBOutlet var btnAceptar:UIButton?
     @IBOutlet var btnCancelar:UIButton?
     
@@ -31,9 +31,15 @@ class VCRegister: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func clickAceptar(){
+        DataHolder.sharedInstance.miPerfil.sNombre = "Jorge"
+        //DataHolder.sharedInstance.miPerfil.iFecha = "1998"
+        //DataHolder.sharedInstance.miPerfil.iAltura = "2"
+        DataHolder.sharedInstance.miPerfil.sApellidos = "Vazquez"
         Auth.auth().createUser(withEmail: (txtNombre?.text)!, password: (txtContrasena?.text)!) { (user, error) in
             if user != nil{
                 print("Te Registraste")
+                self.performSegue(withIdentifier: "trRegistroControlador", sender: self)
+                DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!).setData(DataHolder.sharedInstance.miPerfil.getMap())
             }else{
                 print(error!)
             }
