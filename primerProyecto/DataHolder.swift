@@ -8,6 +8,7 @@
 
 import Firebase
 import UIKit
+import FirebaseDatabase
 
 class DataHolder: NSObject {
     
@@ -15,11 +16,13 @@ class DataHolder: NSObject {
     
     var sNick:String = "Jorge"
     var miPerfil:Perfil = Perfil()
+    var firDataBaseRef: DatabaseReference!
     
     var fireStoreDB:Firestore?
     
     func initFireBase() {
         FirebaseApp.configure()
         fireStoreDB = Firestore.firestore()
+        firDataBaseRef = Database.database().reference()
     }
 }

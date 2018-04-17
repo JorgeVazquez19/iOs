@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import Firebase
 
 class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource {
    
@@ -19,6 +21,14 @@ class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    let refHandle = DataHolder.sharedInstance.firDataBaseRef.child("Coches").observe(DataEventType.value, with: { (snapshot) in
+        print("Lo descargado es: ",snapshot.value)
+    //let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+    // ...
+    })
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

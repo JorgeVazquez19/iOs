@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblReintentar?.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
         //lblPrueba?.text = "Bienvenido!"
        // txtUser?.text = DataHolder.sharedInstance.sNick
@@ -53,11 +54,12 @@ class ViewController: UIViewController {
                 
                 ruta?.getDocument { (document, error) in
                     if document != nil{
-                        DataHolder.sharedInstance.miPerfil.setMap(valores:document?.data())
+                        DataHolder.sharedInstance.miPerfil.setMap(valores:(document?.data())!)
                         self.performSegue(withIdentifier: "trControlador", sender: self)
                     }else{
                         print(error!)
-                        
+                        self.lblReintentar?.isHidden = false
+                        print(self.lblReintentar)
     
                     }
                 }
@@ -72,7 +74,7 @@ class ViewController: UIViewController {
         //    self.performSegue(withIdentifier: "trLogin", sender: self)
        // }
      }
-        /*func alerta(){
+      @IBAction func alerta(){
             let alert = UIAlertController(
                 title: nil,
                 message: "Introduce tus datos por favor",
@@ -84,7 +86,7 @@ class ViewController: UIViewController {
             }
             alert.addAction(reintentar)
             self.present(alert, animated: true, completion: nil)
-        }*/
+        }
     @IBAction func register(){
         self.performSegue(withIdentifier: "trRegistro", sender: self)
     }
