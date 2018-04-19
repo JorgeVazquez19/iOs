@@ -58,7 +58,6 @@ class ViewController: UIViewController {
                         self.performSegue(withIdentifier: "trControlador", sender: self)
                     }else{
                         print(error!)
-                        self.lblReintentar?.isHidden = false
                         print(self.lblReintentar)
     
                     }
@@ -68,6 +67,7 @@ class ViewController: UIViewController {
             }else{
                 print("NO SE HA LOGUEADO")
                 print(error!)
+                self.lblReintentar?.isHidden = false
             }
         }
         //if txtUser?.text == "Jorge Vazquez" && txtPass?.text == "123456789"{

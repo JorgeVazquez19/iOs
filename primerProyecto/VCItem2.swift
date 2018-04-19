@@ -20,28 +20,46 @@ class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    
+    
+    
+    
+        let refHandle = DataHolder.sharedInstance.firDataBaseRef.child("Coches").observeSingleEvent(of: .value, with: {(snapshot) in
+            let arTemp = snapshot.value as? Array<AnyObject>
+           //if(DataHolder.sharedInstance.arCoches==nil){
+                DataHolder.sharedInstance.arCoches = Array<Coche>()
+            //	}
+            
+            for co in arTemp! as [AnyObject]{
+                let cochei=Coche(valores: co as! [String : AnyObject])
+                DataHolder.sharedInstance.arCoches?.append(cochei)
+            }
+            
+            self.Tabla?.reloadData()
+            //let coche0=Coche(valores: arTemp?[0] as! [String : AnyObject]
+            //let coche0=arTemp?[0] as? [String:AnyObject]
+           // print("Lo descargado es: ",snapshot.value)
+        })
+        
     }
-    
-    
-    
-    let refHandle = DataHolder.sharedInstance.firDataBaseRef.child("Coches").observe(DataEventType.value, with: { (snapshot) in
-        print("Lo descargado es: ",snapshot.value)
-    //let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-    // ...
-    })
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if(DataHolder.sharedInstance.arCoches==nil){
+            return 0
+        }else{
+            return (DataHolder.sharedInstance.arCoches?.count)!
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: "idMiCelda") as! MiCelda1
         
-        if indexPath.row == 0{
+        let cochei:Coche=DataHolder.sharedInstance.arCoches![indexPath.row]
+        celda.lblCelda?.text=cochei.sNombre
+       /* if indexPath.row == 0{
             celda.lblCelda?.text="Jorge"
         }else if indexPath.row == 1{
             celda.lblCelda?.text="Maria"
@@ -51,7 +69,7 @@ class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource {
             celda.lblCelda?.text="Pedro"
         }else if indexPath.row == 4{
             celda.lblCelda?.text="Sara"
-        }
+        }*/
         
         return celda
     }

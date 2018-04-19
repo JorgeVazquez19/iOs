@@ -17,7 +17,7 @@ class DataHolder: NSObject {
     var sNick:String = "Jorge"
     var miPerfil:Perfil = Perfil()
     var firDataBaseRef: DatabaseReference!
-    
+    var arCoches:Array<Coche>?
     var fireStoreDB:Firestore?
     
     func initFireBase() {

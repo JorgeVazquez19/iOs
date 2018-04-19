@@ -38,18 +38,18 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9d7-cb-yxW">
-                                <rect key="frame" x="103" y="486" width="168" height="30"/>
+                                <rect key="frame" x="103" y="257" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cocheBueno" translatesAutoresizingMaskIntoConstraints="NO" id="B2J-UH-l7N">
-                                <rect key="frame" x="49" y="288" width="265" height="144"/>
+                                <rect key="frame" x="47" y="391" width="265" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ki9-Kn-nGA">
-                                <rect key="frame" x="103" y="213" width="168" height="30"/>
+                                <rect key="frame" x="103" y="197" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText"/>
@@ -60,7 +60,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contraseña o Usuario Incorrecto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sv6-Wg-kxo">
-                                <rect key="frame" x="62" y="541" width="250" height="21"/>
+                                <rect key="frame" x="62" y="310" width="250" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.015364585965828015" blue="0.17318210582253768" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -228,7 +228,7 @@
         <!--Mapa-->
         <scene sceneID="E4e-Oe-mGV">
             <objects>
-                <viewController id="aNV-b4-nAe" sceneMemberID="viewController">
+                <viewController id="aNV-b4-nAe" customClass="VCMapa" customModule="primerProyecto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mkn-ky-Bac">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -242,6 +242,9 @@
                         <viewLayoutGuide key="safeArea" id="8xA-5t-RQg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" id="lIy-9F-d82"/>
+                    <connections>
+                        <outlet property="miMapa" destination="Giq-eb-HjL" id="HFB-en-cVM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AbQ-6E-5vU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -308,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEQ-Ge-t4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="631" y="731"/>
+            <point key="canvasLocation" x="609" y="739"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DY2-9q-DgR">
