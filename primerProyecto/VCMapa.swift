@@ -38,7 +38,7 @@ class VCMapa: UIViewController, CLLocationManagerDelegate {
         miMapa?.addAnnotation(miPin)
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations[0])
+        //print(locations[0])
         self.NuevaRegionMapa(lat: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
     }
     

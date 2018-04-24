@@ -9,6 +9,7 @@
 import Firebase
 import UIKit
 import FirebaseDatabase
+import FirebaseStorage
 
 class DataHolder: NSObject {
     
@@ -19,10 +20,11 @@ class DataHolder: NSObject {
     var firDataBaseRef: DatabaseReference!
     var arCoches:Array<Coche>?
     var fireStoreDB:Firestore?
+    var firStorage:Storage?
     
     func initFireBase() {
         FirebaseApp.configure()
         fireStoreDB = Firestore.firestore()
-        firDataBaseRef = Database.database().reference()
+        firStorage = Storage.storage()
     }
 }

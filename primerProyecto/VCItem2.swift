@@ -15,16 +15,31 @@ class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet var Tabla: UITableView?
+    var arCoches:[Coche]=[]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        DataHolder.sharedInstance.fireStoreDB?.collection("Coches").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let coches:Coche = Coche()
+                        coches.sID=document.documentID
+                        coches.setMap(valores: document.data())
+                        self.arCoches.append(coches)
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                
+                
+                self.Tabla?.reloadData()
+                }
+            
+        }
     
     
     
-    
-        let refHandle = DataHolder.sharedInstance.firDataBaseRef.child("Coches").observeSingleEvent(of: .value, with: {(snapshot) in
+        /*let refHandle = DataHolder.sharedInstance.firDataBaseRef.child("Coches").observeSingleEvent(of: .value, with: {(snapshot) in
             let arTemp = snapshot.value as? Array<AnyObject>
            //if(DataHolder.sharedInstance.arCoches==nil){
                 DataHolder.sharedInstance.arCoches = Array<Coche>()
@@ -39,7 +54,7 @@ class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource {
             //let coche0=Coche(valores: arTemp?[0] as! [String : AnyObject]
             //let coche0=arTemp?[0] as? [String:AnyObject]
            // print("Lo descargado es: ",snapshot.value)
-        })
+        })*/
         
     }
     override func didReceiveMemoryWarning() {
@@ -47,18 +62,15 @@ class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(DataHolder.sharedInstance.arCoches==nil){
-            return 0
-        }else{
-            return (DataHolder.sharedInstance.arCoches?.count)!
-        }
+            return self.arCoches.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: "idMiCelda") as! MiCelda1
         
-        let cochei:Coche=DataHolder.sharedInstance.arCoches![indexPath.row]
-        celda.lblCelda?.text=cochei.sNombre
+        celda.lblCelda?.text=self.arCoches[indexPath.row].sNombre
+        celda.mostrarImagen(url: self.arCoches[indexPath.row].sImg!)
        /* if indexPath.row == 0{
             celda.lblCelda?.text="Jorge"
         }else if indexPath.row == 1{
