@@ -10,32 +10,22 @@ import UIKit
 import FirebaseDatabase
 import Firebase
 
-class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource, DataHolderDelegate {
    
     
     
     @IBOutlet var Tabla: UITableView?
-    var arCoches:[Coche]=[]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DataHolder.sharedInstance.fireStoreDB?.collection("Coches").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        let coches:Coche = Coche()
-                        coches.sID=document.documentID
-                        coches.setMap(valores: document.data())
-                        self.arCoches.append(coches)
-                        print("\(document.documentID) => \(document.data())")
-                    }
-                
-                
-                self.Tabla?.reloadData()
-                }
-            
-        }
+        DataHolder.sharedInstance.descargarDatos(delegate: self)
+        /*let blRes:Bool = DataHolder.sharedInstance.descargarDatos()
+        if(blRes){
+            print("DESCARGADO")
+            self.refresh////
+        }else{
+            print("No Descargado")
+        }*/
     
     
     
@@ -61,16 +51,23 @@ class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func DHDDescargaDatosCompleta(blFin: Bool) {
+        if blFin{
+            self.Tabla?.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return self.arCoches.count
+            return DataHolder.sharedInstance.arCoches.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: "idMiCelda") as! MiCelda1
         
-        celda.lblCelda?.text=self.arCoches[indexPath.row].sNombre
-        celda.mostrarImagen(url: self.arCoches[indexPath.row].sImg!)
+        celda.lblCelda?.text=DataHolder.sharedInstance.arCoches[indexPath.row].sNombre
+        celda.mostrarImagen(url: DataHolder.sharedInstance.arCoches[indexPath.row].sImg!)
        /* if indexPath.row == 0{
             celda.lblCelda?.text="Jorge"
         }else if indexPath.row == 1{

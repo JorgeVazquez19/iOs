@@ -45,9 +45,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func DHDLogin(blFinLogin: Bool) {
+        if blFinLogin{
+            self.performSegue(withIdentifier: "trControlador", sender: self)
+        }
+    }
+    
     @IBAction func login(){
+        DataHolder.sharedInstance.firebaseRegistro(withEmail: (txtUser?.text)!, password: (txtPass?.text)!, delegate: self)
         //print("Hey Whats up!!"+(txtUser?.text)!)
-        Auth.auth().signIn(withEmail: (txtUser?.text)!, password: (txtPass?.text)!) { (user, error) in
+        /*Auth.auth().signIn(withEmail: (txtUser?.text)!, password: (txtPass?.text)!) { (user, error) in
             if user != nil{
                 let ruta =
                 DataHolder.sharedInstance.fireStoreDB?.collection("Perfiles").document((user?.uid)!)
@@ -72,7 +79,7 @@ class ViewController: UIViewController {
         }
         //if txtUser?.text == "Jorge Vazquez" && txtPass?.text == "123456789"{
         //    self.performSegue(withIdentifier: "trLogin", sender: self)
-       // }
+       // }*/
      }
       @IBAction func alerta(){
             let alert = UIAlertController(

@@ -9,20 +9,32 @@
 import UIKit
 import MapKit
 
-class VCMapa: UIViewController, CLLocationManagerDelegate {
+class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate {
     
     @IBOutlet var miMapa:MKMapView?
     var locationManager:CLLocationManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.agregarPin(titulo: "hola", latitude: 42, longitude: -3)
+        DataHolder.sharedInstance.descargarDatos(delegate: self)
+        //self.agregarPin(titulo: "hola", latitude: 42, longitude: -3)
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()
         locationManager?.startUpdatingLocation()
         miMapa?.showsUserLocation = true
         // Do any additional setup after loading the view.
+    }
+    
+    func DHDDescargaDatosCompleta(blFin: Bool) {
+        if blFin{
+            self.agregarPines()
+        }
+    }
+    
+    func agregarPines() {
+        print("Agregando pines")
+        
     }
 
     override func didReceiveMemoryWarning() {

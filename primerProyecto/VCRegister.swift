@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class VCRegister: UIViewController {
+class VCRegister: UIViewController, DataHolderDelegate{
 
     
     @IBOutlet var txtNombre:UITextField?
@@ -31,11 +31,12 @@ class VCRegister: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func clickAceptar(){
-        DataHolder.sharedInstance.miPerfil.sNombre = "Jorge"
+        DataHolder.sharedInstance.firebaseRegistro(withEmail: (txtNombre?.text)!, password: (txtContrasena?.text)!, delegate: self)
+        //DataHolder.sharedInstance.miPerfil.sNombre = "Jorge"
         //DataHolder.sharedInstance.miPerfil.iFecha = "1998"
         //DataHolder.sharedInstance.miPerfil.iAltura = "2"
-        DataHolder.sharedInstance.miPerfil.sApellidos = "Vazquez"
-        Auth.auth().createUser(withEmail: (txtNombre?.text)!, password: (txtContrasena?.text)!) { (user, error) in
+        //DataHolder.sharedInstance.miPerfil.sApellidos = "Vazquez"
+       /* Auth.auth().createUser(withEmail: (txtNombre?.text)!, password: (txtContrasena?.text)!) { (user, error) in
             if user != nil{
                 print("Te Registraste")
                 self.performSegue(withIdentifier: "trRegistroControlador", sender: self)
@@ -43,6 +44,12 @@ class VCRegister: UIViewController {
             }else{
                 print(error!)
             }
+        }*/
+    }
+    
+    func DHDRegistro(blFinRegistro: Bool) {
+        if blFinRegistro{
+            self.performSegue(withIdentifier: "trRegistroControlador", sender: self)
         }
     }
     /*@IBAction func login(){
