@@ -190,11 +190,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3h-a1-P7L">
-                                                    <rect key="frame" x="20" y="44" width="87" height="56"/>
+                                                    <rect key="frame" x="288" y="12" width="87" height="56"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRt-fA-2ob">
-                                                    <rect key="frame" x="30" y="6" width="120" height="56"/>
+                                                    <rect key="frame" x="15" y="11" width="120" height="56"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -264,30 +264,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z4V-Z2-b4u">
-                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="itemSize" width="375" height="114"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MiCelda2" id="RoS-OU-mYo" customClass="CVCollection" customModule="primerProyecto" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="inO-pY-eLN">
+                                                    <rect key="frame" x="270" y="31" width="66" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltm-SY-zmj">
-                                                    <rect key="frame" x="25" y="12" width="51" height="21"/>
+                                                    <rect key="frame" x="20" y="47" width="51" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="inO-pY-eLN">
-                                                    <rect key="frame" x="17" y="41" width="66" height="53"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                             </subviews>
                                         </view>
                                         <connections>
@@ -312,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEQ-Ge-t4x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="609" y="739"/>
+            <point key="canvasLocation" x="608.79999999999995" y="738.98050974512751"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DY2-9q-DgR">
@@ -324,9 +324,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="vRl-4e-yGW" kind="relationship" relationship="viewControllers" id="8gU-BF-Uj8"/>
-                        <segue destination="qPS-34-xLK" kind="relationship" relationship="viewControllers" id="pBV-t8-nKz"/>
-                        <segue destination="aNV-b4-nAe" kind="relationship" relationship="viewControllers" id="Tgw-1P-ebH"/>
+                        <segue destination="aNV-b4-nAe" kind="relationship" relationship="viewControllers" id="DxP-kZ-JbI"/>
+                        <segue destination="qPS-34-xLK" kind="relationship" relationship="viewControllers" id="xRv-yf-qRt"/>
+                        <segue destination="vRl-4e-yGW" kind="relationship" relationship="viewControllers" id="4en-7D-MC5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tn3-rN-7hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -339,7 +339,6 @@
         <image name="icono" width="380" height="309"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0me-1D-rRe"/>
         <segue reference="ch7-7e-u0R"/>
     </inferredMetricsTieBreakers>
 </document>

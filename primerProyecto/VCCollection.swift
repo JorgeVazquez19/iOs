@@ -24,11 +24,15 @@ class VCCollection: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return DataHolder.sharedInstance.arCoches.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CVCollection=collectionView.dequeueReusableCell(withReuseIdentifier: "MiCelda2", for: indexPath) as! CVCollection
+        
+        cell.lblCollection?.text=DataHolder.sharedInstance.arCoches[indexPath.row].sNombre
+        cell.mostrar(url: DataHolder.sharedInstance.arCoches[indexPath.row].sImg!)
+        /*
         if indexPath.row == 0{
             cell.lblCollection?.text="Jorge"
             cell.imagen?.image=UIImage(named:"nike.png")
@@ -45,7 +49,7 @@ class VCCollection: UIViewController, UICollectionViewDelegate, UICollectionView
             cell.lblCollection?.text="Sara"
             cell.imagen?.image=UIImage(named:"adidas.png")
         }
-        
+        */
         return cell
     }
     

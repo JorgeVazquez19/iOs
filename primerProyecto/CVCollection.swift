@@ -13,18 +13,24 @@ class CVCollection: UICollectionViewCell {
     @IBOutlet var lblCollection:UILabel?
     
     var imagenDescargada:UIImage?
-    func mostrarImagen(url:String){
-        self.imagen?.image = nil
-        
-        let gsReference = DataHolder.sharedInstance.firStorage?.reference(forURL:url)
-        
-        gsReference?.getData(maxSize: 1 * 1024 * 1024) {data, error in
-            if error != nil {
-                print("error ocurred")
-            }else{
-                self.imagenDescargada = UIImage(data:data!)
-                self.imagen?.image = self.imagenDescargada
+    
+    func mostrar(url:String){
+        let imagenDescargadaaux = DataHolder.sharedInstance.hmimg[url]
+        if(imagenDescargadaaux != nil){
+            self.imagenDescargada = imagenDescargadaaux
+            self.imagen?.image = self.imagenDescargada
+        }else{
+            self.imagen?.image = nil
+            let gsReference = DataHolder.sharedInstance.firStorage?.reference(forURL:url)
+            gsReference?.getData(maxSize: 1 * 1024 * 1024) {data, error in
+                if error != nil {
+                    print(error)
+                }else{
+                    self.imagenDescargada = UIImage(data:data!)
+                    self.imagen?.image = self.imagenDescargada
+                }
             }
+            DataHolder.sharedInstance.hmimg[url]=self.imagen?.image
         }
     }
 }

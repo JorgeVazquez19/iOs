@@ -25,16 +25,23 @@ class MiCelda1: UITableViewCell {
         // Configure the view for the selected state
     }
     func mostrarImagen(url:String){
-        self.imgImagen?.image = nil
-        let gsReference = DataHolder.sharedInstance.firStorage?.reference(forURL:url)
         
+        let imagenDescargadaaux = DataHolder.sharedInstance.hmimg[url]
+        if(imagenDescargadaaux != nil){
+            self.imagenDescargada = imagenDescargadaaux
+            self.imgImagen?.image = self.imagenDescargada
+        }else{
+            self.imgImagen?.image = nil
+            let gsReference = DataHolder.sharedInstance.firStorage?.reference(forURL:url)
         gsReference?.getData(maxSize: 1 * 1024 * 1024) {data, error in
             if error != nil {
-                
+                print(error)
             }else{
-                self.imagenDescargada = UIImage(data: data!)
+                self.imagenDescargada = UIImage(data:data!)
                 self.imgImagen?.image = self.imagenDescargada
             }
+            }
+            DataHolder.sharedInstance.hmimg[url]=self.imgImagen?.image
         }
         
     }

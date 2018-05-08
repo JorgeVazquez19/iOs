@@ -21,6 +21,7 @@ class DataHolder: NSObject {
     var fireStoreDB:Firestore?
     var firStorage:Storage?
     var arCoches:[Coche] = []
+    var hmimg:[String:UIImage] = [:]
     
     
     func initFireBase() {
@@ -76,9 +77,9 @@ class DataHolder: NSObject {
                 ruta?.getDocument { (document, error) in
                     if document != nil{
                         self.miPerfil.setMap(valores:(document?.data())!)
+                        delegate.DHDLogin!(blFinLogin: true)
                     }else{
                         print(error!)
-                        
                     }
                 }
                 

@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DataHolderDelegate {
     
     @IBOutlet var txtUser:UITextField?
     @IBOutlet var txtPass:UITextField?
@@ -45,14 +45,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func DHDLogin(blFinLogin: Bool) {
-        if blFinLogin{
-            self.performSegue(withIdentifier: "trControlador", sender: self)
-        }
-    }
+    
     
     @IBAction func login(){
-        DataHolder.sharedInstance.firebaseRegistro(withEmail: (txtUser?.text)!, password: (txtPass?.text)!, delegate: self)
+        
+        DataHolder.sharedInstance.firebaseLogin(withEmail: (txtUser?.text)!, password: (txtPass?.text)!, delegate: self)
         //print("Hey Whats up!!"+(txtUser?.text)!)
         /*Auth.auth().signIn(withEmail: (txtUser?.text)!, password: (txtPass?.text)!) { (user, error) in
             if user != nil{
@@ -81,6 +78,11 @@ class ViewController: UIViewController {
         //    self.performSegue(withIdentifier: "trLogin", sender: self)
        // }*/
      }
+    func DHDLogin(blFinLogin: Bool) {
+        if blFinLogin{
+            self.performSegue(withIdentifier: "trControlador", sender: self)
+        }
+    }
       @IBAction func alerta(){
             let alert = UIAlertController(
                 title: nil,
