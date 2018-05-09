@@ -14,10 +14,10 @@ class VCRegister: UIViewController, DataHolderDelegate{
     
     @IBOutlet var txtNombre:UITextField?
     @IBOutlet var txtContrasena:UITextField?
-    //@IBOutlet var txtRepetirContrasena:UITextField?
-    //@IBOutlet var txtEmail:UITextField?
     @IBOutlet var btnAceptar:UIButton?
     @IBOutlet var btnCancelar:UIButton?
+    @IBOutlet var txtUsuario:UITextField?
+    @IBOutlet var txtRepetir:UITextField?
     
     
     override func viewDidLoad() {
@@ -46,7 +46,6 @@ class VCRegister: UIViewController, DataHolderDelegate{
             }
         }*/
     }
-    
     func DHDRegistro(blFinRegistro: Bool) {
         if blFinRegistro{
             self.performSegue(withIdentifier: "trRegistroControlador", sender: self)
