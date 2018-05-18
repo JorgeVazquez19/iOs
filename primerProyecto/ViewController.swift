@@ -14,10 +14,12 @@ class ViewController: UIViewController, DataHolderDelegate {
     @IBOutlet var txtUser:UITextField?
     @IBOutlet var txtPass:UITextField?
     @IBOutlet var btnLogin:UIButton?
+    @IBOutlet var lblReintentar:UILabel?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.lblReintentar?.isHidden=true
         // Do any additional setup after loading the view, typically from a nib.
         //lblPrueba?.text = "Bienvenido!"
        // txtUser?.text = DataHolder.sharedInstance.sNick

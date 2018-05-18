@@ -18,6 +18,7 @@ class DataHolder: NSObject {
     var sNick:String = "Jorge"
     var miPerfil:Perfil = Perfil()
     var firDataBaseRef: DatabaseReference!
+    var firStorageRef:StorageReference?
     var fireStoreDB:Firestore?
     var firStorage:Storage?
     var arCoches:[Coche] = []
@@ -28,6 +29,7 @@ class DataHolder: NSObject {
         FirebaseApp.configure()
         fireStoreDB = Firestore.firestore()
         firStorage = Storage.storage()
+        firStorageRef = firStorage?.reference()
     }
         
     func descargarDatos(delegate:DataHolderDelegate){

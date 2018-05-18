@@ -78,6 +78,7 @@
                     </view>
                     <connections>
                         <outlet property="btnLogin" destination="sQH-lr-0Oc" id="VYI-XF-09w"/>
+                        <outlet property="lblReintentar" destination="sv6-Wg-kxo" id="FR3-DE-vND"/>
                         <outlet property="txtPass" destination="9d7-cb-yxW" id="eVS-1g-J4k"/>
                         <outlet property="txtUser" destination="ki9-Kn-nGA" id="pKk-Jh-Dw0"/>
                         <segue destination="u3l-LF-THp" kind="show" identifier="trControlador" id="ch7-7e-u0R"/>
@@ -229,6 +230,55 @@
             </objects>
             <point key="canvasLocation" x="-903.20000000000005" y="791.15442278860576"/>
         </scene>
+        <!--Modificar Usuario-->
+        <scene sceneID="RVt-Cr-MHZ">
+            <objects>
+                <viewController id="vGZ-li-Q5S" customClass="VCSelectImg" customModule="primerProyecto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="amT-oN-Hxm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFf-hi-VlF">
+                                <rect key="frame" x="55" y="20" width="264" height="264"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyo-1l-t6g">
+                                <rect key="frame" x="30" y="312" width="135" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Seleccionar Imagen"/>
+                                <connections>
+                                    <action selector="accionBotonGaleria" destination="vGZ-li-Q5S" eventType="touchUpInside" id="C3o-U9-x14"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAh-yu-Nnf">
+                                <rect key="frame" x="213" y="312" width="133" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Camara"/>
+                                <connections>
+                                    <action selector="accionBotonCamara" destination="vGZ-li-Q5S" eventType="touchUpInside" id="rXP-Zb-7WL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjj-yh-T46">
+                                <rect key="frame" x="120" y="417" width="135" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Subir a Firebase"/>
+                                <connections>
+                                    <action selector="accionBotonSubir" destination="vGZ-li-Q5S" eventType="touchUpInside" id="UPC-D0-aSG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="U3q-lv-ef9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Modificar Usuario" id="9xx-Mb-adB"/>
+                    <connections>
+                        <outlet property="imgView" destination="KFf-hi-VlF" id="025-1K-bqV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcs-oH-GSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-122.40000000000001" y="1591.7541229385308"/>
+        </scene>
         <!--Tabla-->
         <scene sceneID="CfA-Ph-cbY">
             <objects>
@@ -343,7 +393,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltm-SY-zmj">
-                                                    <rect key="frame" x="20" y="47" width="51" height="21"/>
+                                                    <rect key="frame" x="20" y="47" width="86" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -388,6 +438,7 @@
                         <segue destination="aNV-b4-nAe" kind="relationship" relationship="viewControllers" id="DxP-kZ-JbI"/>
                         <segue destination="qPS-34-xLK" kind="relationship" relationship="viewControllers" id="xRv-yf-qRt"/>
                         <segue destination="vRl-4e-yGW" kind="relationship" relationship="viewControllers" id="4en-7D-MC5"/>
+                        <segue destination="vGZ-li-Q5S" kind="relationship" relationship="viewControllers" id="7H1-ab-dZf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tn3-rN-7hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -403,6 +454,6 @@
         <image name="registericon" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ch7-7e-u0R"/>
+        <segue reference="cYk-N1-3SV"/>
     </inferredMetricsTieBreakers>
 </document>
