@@ -10,9 +10,9 @@ import UIKit
 
 class MiCelda1: UITableViewCell {
     @IBOutlet var lblCelda: UILabel?
-    @IBOutlet var imgImagen: UIImageView?
+    //@IBOutlet var imgImagen: UIImageView?
     
-    var imagenDescargada:UIImage?
+    //var imagenDescargada:UIImage?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +24,7 @@ class MiCelda1: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func mostrarImagen(url:String){
+    /*func mostrarImagen(url:String){
         
         let imagenDescargadaaux = DataHolder.sharedInstance.hmimg[url]
         if(imagenDescargadaaux != nil){
@@ -44,5 +44,5 @@ class MiCelda1: UITableViewCell {
             DataHolder.sharedInstance.hmimg[url]=self.imgImagen?.image
         }
         
-    }
+    }*/
 }

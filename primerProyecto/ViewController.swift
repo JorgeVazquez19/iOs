@@ -83,7 +83,7 @@ class ViewController: UIViewController, DataHolderDelegate {
             self.performSegue(withIdentifier: "trControlador", sender: self)
         }
     }
-      @IBAction func alerta(){
+      /*@IBAction func alerta(){
             let alert = UIAlertController(
                 title: nil,
                 message: "Introduce tus datos por favor",
@@ -95,7 +95,7 @@ class ViewController: UIViewController, DataHolderDelegate {
             }
             alert.addAction(reintentar)
             self.present(alert, animated: true, completion: nil)
-        }
+        }*/
     @IBAction func register(){
         self.performSegue(withIdentifier: "trRegistro", sender: self)
     }

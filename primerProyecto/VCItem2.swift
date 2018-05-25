@@ -10,15 +10,20 @@ import UIKit
 import FirebaseDatabase
 import Firebase
 
-class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource, DataHolderDelegate {
+class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource, DataHolderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
     
     
     @IBOutlet var Tabla: UITableView?
+    @IBOutlet var imgView:UIImageView?
+    let imagePicker = UIImagePickerController()
+    var imgData:Data?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         DataHolder.sharedInstance.descargarDatos(delegate: self)
+        imgView?.image = #imageLiteral(resourceName: "usuario")
+        imagePicker.delegate = self
         /*let blRes:Bool = DataHolder.sharedInstance.descargarDatos()
         if(blRes){
             print("DESCARGADO")
@@ -47,6 +52,29 @@ class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource, Data
         })*/
         
     }
+    @IBAction func accionBotonGaleria(){
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    @IBAction func accionBotonCamara(){
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .camera
+        
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let img = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imgData = UIImageJPEGRepresentation(img!, 0.5)! as Data
+        imgView?.image = img
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,7 +95,7 @@ class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource, Data
         let celda = tableView.dequeueReusableCell(withIdentifier: "idMiCelda") as! MiCelda1
         
         celda.lblCelda?.text=DataHolder.sharedInstance.arCoches[indexPath.row].sNombre
-        celda.mostrarImagen(url: DataHolder.sharedInstance.arCoches[indexPath.row].sImg!)
+        //celda.mostrarImagen(url: DataHolder.sharedInstance.arCoches[indexPath.row].sImg!)
        /* if indexPath.row == 0{
             celda.lblCelda?.text="Jorge"
         }else if indexPath.row == 1{

@@ -18,6 +18,7 @@ class VCRegister: UIViewController, DataHolderDelegate{
     @IBOutlet var btnCancelar:UIButton?
     @IBOutlet var txtUsuario:UITextField?
     @IBOutlet var txtRepetir:UITextField?
+    @IBOutlet var Date:UIDatePicker?
     
     
     override func viewDidLoad() {
