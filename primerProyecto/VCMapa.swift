@@ -17,7 +17,7 @@ class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         DataHolder.sharedInstance.descargarDatos(delegate: self)
-        //self.agregarPin(titulo: "hola", latitude: 42, longitude: -3)
+        //self.agregarPin(titulo: DataHolder.sharedInstance.arCoches.sNombre, latitude: 42, longitude: -3)
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()

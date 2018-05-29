@@ -11,15 +11,15 @@ import UIKit
 class Perfil: NSObject {
     
     var sNombre:String?
-    var iFecha:Int?
+    var iFecha:String?
     var sApellidos:String?
     var ialtura:Int?
     
     func setMap(valores:[String:Any]) {
-        sNombre = valores["nombre"] as? String
-        iFecha = valores["nacimiento"] as? Int
-        sApellidos = valores["apellidos"] as? String
-        ialtura = valores["altura"] as? Int
+        sNombre = valores["Nombre"] as? String
+        iFecha = valores["Nacimiento"] as? String
+        sApellidos = valores["Apellido"] as? String
+        ialtura = valores["Altura"] as? Int
     }
     
     func getMap() -> [String:Any] {

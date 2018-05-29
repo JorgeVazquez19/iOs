@@ -47,9 +47,15 @@ class VCRegister: UIViewController, DataHolderDelegate{
             }
         }*/
     }
+    /*func Contrasena(withEmail: String, password: String, delegate:DataHolderDelegate){
+        Auth.auth().confirmPasswordReset(withCode: <#T##String#>, newPassword: <#T##String#>, completion: <#T##ConfirmPasswordResetCallback##ConfirmPasswordResetCallback##(Error?) -> Void#>)
+    if txtRepetir != txtContrasena{
+        print(error)
+    }
+    }*/
     func DHDRegistro(blFinRegistro: Bool) {
         if blFinRegistro{
-            self.performSegue(withIdentifier: "trRegistroControlador", sender: self)
+            self.performSegue(withIdentifier: "trCompletar", sender: self)
         }
     }
     /*@IBAction func login(){

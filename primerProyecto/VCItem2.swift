@@ -16,6 +16,7 @@ class VCItem2: UIViewController,UITableViewDelegate, UITableViewDataSource, Data
     
     @IBOutlet var Tabla: UITableView?
     @IBOutlet var imgView:UIImageView?
+    @IBOutlet var btnConfirmar:UIButton?
     let imagePicker = UIImagePickerController()
     var imgData:Data?
 
