@@ -45,7 +45,6 @@ class DataHolder: NSObject {
                         coches.setMap(valores: document.data())
                         self.arCoches.append(coches)
                         
-                        
                         //print("document.documentID) => \(document.data())")
                         
                     }
@@ -92,7 +91,13 @@ class DataHolder: NSObject {
             }
         }
     }
-
+    func perfilUsuario(){
+    let user = Auth.auth().currentUser
+    if let user = user {
+        let Nombre = user.displayName
+        let photoURL = user.photoURL
+        }
+    }
     }
 
     @objc protocol DataHolderDelegate{

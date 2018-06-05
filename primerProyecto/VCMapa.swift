@@ -17,12 +17,17 @@ class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         DataHolder.sharedInstance.descargarDatos(delegate: self)
-        //self.agregarPin(titulo: DataHolder.sharedInstance.arCoches.sNombre, latitude: 42, longitude: -3)
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()
         locationManager?.startUpdatingLocation()
         miMapa?.showsUserLocation = true
+        agregarPin(titulo:"Calle de Servator, 19", latitude:40.464636, longitude:-3.647671)
+        agregarPin(titulo:"Calle Hermanos Gomez, 53", latitude:40.429843, longitude:-3.649511)
+        agregarPin(titulo:"Estacion de Autobuses, 13", latitude:40.372698, longitude:-3.676732)
+        agregarPin(titulo:"Calle Alfredo Aleix, 5", latitude:40.368448, longitude:-3.754559)
+        agregarPin(titulo:"Calle Tablada, 25", latitude:40.460389, longitude:-3.701925)
+        agregarPin(titulo:"Calle Mirasierra, 0", latitude:40.38916, longitude:-3.7051)
         // Do any additional setup after loading the view.
     }
     

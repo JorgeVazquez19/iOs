@@ -15,6 +15,8 @@
 		6C24818F2076407D00BC8C58 /* MiCelda1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24818E2076407D00BC8C58 /* MiCelda1.swift */; };
 		6C248199207652DA00BC8C58 /* VCCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C248198207652DA00BC8C58 /* VCCollection.swift */; };
 		6C24819B20765D5B00BC8C58 /* CVCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C24819A20765D5B00BC8C58 /* CVCollection.swift */; };
+		6C87637D20C689A900D03F5C /* ChatTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87637C20C689A900D03F5C /* ChatTable.swift */; };
+		6C87637F20C6911500D03F5C /* ChatTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C87637E20C6911500D03F5C /* ChatTableCell.swift */; };
 		6C96EA24207F88F100F5D9E9 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C96EA23207F88F100F5D9E9 /* Perfil.swift */; };
 		6CC56E14207CDBBA001466B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CC56E13207CDBBA001466B4 /* GoogleService-Info.plist */; };
 		6CC56E16207CE19E001466B4 /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC56E15207CE19E001466B4 /* DataHolder.swift */; };
@@ -37,6 +39,8 @@
 		6C24818E2076407D00BC8C58 /* MiCelda1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiCelda1.swift; sourceTree = "<group>"; };
 		6C248198207652DA00BC8C58 /* VCCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCollection.swift; sourceTree = "<group>"; };
 		6C24819A20765D5B00BC8C58 /* CVCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCollection.swift; sourceTree = "<group>"; };
+		6C87637C20C689A900D03F5C /* ChatTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTable.swift; sourceTree = "<group>"; };
+		6C87637E20C6911500D03F5C /* ChatTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableCell.swift; sourceTree = "<group>"; };
 		6C96EA23207F88F100F5D9E9 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		6CC56E13207CDBBA001466B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6CC56E15207CE19E001466B4 /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				6C96EA23207F88F100F5D9E9 /* Perfil.swift */,
 				6C04417F2088957A0027F33E /* VCMapa.swift */,
 				6C0441852088B8F20027F33E /* Coche.swift */,
+				6C87637C20C689A900D03F5C /* ChatTable.swift */,
+				6C87637E20C6911500D03F5C /* ChatTableCell.swift */,
 			);
 			path = primerProyecto;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 			files = (
 				6C0441802088957A0027F33E /* VCMapa.swift in Sources */,
 				6CEEC86A2063B723006DD6F6 /* primerProyecto.xcdatamodeld in Sources */,
+				6C87637D20C689A900D03F5C /* ChatTable.swift in Sources */,
 				6CC56E16207CE19E001466B4 /* DataHolder.swift in Sources */,
 				6C248199207652DA00BC8C58 /* VCCollection.swift in Sources */,
 				6C0441862088B8F20027F33E /* Coche.swift in Sources */,
@@ -290,6 +297,7 @@
 				6C20A75F2073ACD5006BF989 /* VCRegister.swift in Sources */,
 				6C96EA24207F88F100F5D9E9 /* Perfil.swift in Sources */,
 				6CEEC8642063B723006DD6F6 /* ViewController.swift in Sources */,
+				6C87637F20C6911500D03F5C /* ChatTableCell.swift in Sources */,
 				6CEEC8622063B723006DD6F6 /* AppDelegate.swift in Sources */,
 				6C24818D2076285200BC8C58 /* VCItem2.swift in Sources */,
 				6C24818F2076407D00BC8C58 /* MiCelda1.swift in Sources */,
