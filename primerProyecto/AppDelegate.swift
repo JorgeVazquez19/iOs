@@ -19,12 +19,12 @@ class AppDelegate:UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         DataHolder.sharedInstance.initFireBase()
         
-//        let chatsController = ChatTable()
-//        
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.makeKeyAndVisible()
-//        
-//        window?.rootViewController = UINavigationController(rootViewController: chatsController)
+       // let chatsController = ChatTable()
+
+       // window = UIWindow(frame: UIScreen.main.bounds)
+        //window?.makeKeyAndVisible()
+
+        //window?.rootViewController = UINavigationController(rootViewController: chatsController)
         return true
     }
 

@@ -14,7 +14,6 @@ class ChatTableCell: UITableViewCell {
         let label = UILabel()
         label.text = "Username text"
         label.textColor = .black
-        label.backgroundColor = .yellow
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -30,6 +29,9 @@ class ChatTableCell: UITableViewCell {
     
     let messageLabel: UILabel = {
         let label = UILabel()
+        label.text = "Last Message"
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -75,5 +77,10 @@ class ChatTableCell: UITableViewCell {
         userNameLabel.topAnchor.constraint(equalTo: profileImage.topAnchor).isActive = true
         userNameLabel.leftAnchor.constraint(equalTo: profileImage.rightAnchor, constant:8).isActive = true
         userNameLabel.rightAnchor.constraint(equalTo: timeLabel.leftAnchor, constant:-8).isActive = true
+        
+        messageLabel.bottomAnchor.constraint(equalTo: profileImage.bottomAnchor).isActive = true
+        messageLabel.leftAnchor.constraint(equalTo: userNameLabel.leftAnchor).isActive = true
+        messageLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
+        
     }
 }

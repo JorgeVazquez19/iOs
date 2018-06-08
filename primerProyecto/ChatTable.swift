@@ -11,7 +11,6 @@ import UIKit
 class ChatTable: UITableViewController {
     
     let chatCellIdentifier = "chatCellIdentifier"
-
     override func viewDidLoad( ) {
         super.viewDidLoad()
 
@@ -51,6 +50,6 @@ class ChatTable: UITableViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 70
     }
 }
