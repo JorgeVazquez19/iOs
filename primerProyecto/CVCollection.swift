@@ -11,6 +11,8 @@ import UIKit
 class CVCollection: UICollectionViewCell {
     @IBOutlet var imagen:UIImageView?
     @IBOutlet var lblCollection:UILabel?
+    @IBOutlet var btnTipo:UIButton?
+    @IBOutlet var btnVolver:UIButton?
     
     var imagenDescargada:UIImage?
     

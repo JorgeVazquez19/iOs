@@ -11,6 +11,7 @@ import UIKit
 class VCCollection: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var colPrincipal:UICollectionView?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,6 @@ class VCCollection: UIViewController, UICollectionViewDelegate, UICollectionView
         
         cell.lblCollection?.text=DataHolder.sharedInstance.arCoches[indexPath.row].sNombre
         cell.mostrar(url: DataHolder.sharedInstance.arCoches[indexPath.row].sImg!)
-        cell.lblCollection?.text=DataHolder.sharedInstance.arCoches[indexPath.row].sNombre
         /*
         if indexPath.row == 0{
             cell.lblCollection?.text="Jorge"

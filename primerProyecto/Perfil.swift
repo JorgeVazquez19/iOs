@@ -10,24 +10,22 @@ import UIKit
 
 class Perfil: NSObject {
     
-    var sNombre:String?
-    var iFecha:String?
-    var sApellidos:String?
-    var ialtura:Int?
+    var sID:String?
+    var sUsuario:String?
+    var sEmail:String?
+    var sTelefono:String?
     
     func setMap(valores:[String:Any]) {
-        sNombre = valores["Nombre"] as? String
-        iFecha = valores["Nacimiento"] as? String
-        sApellidos = valores["Apellido"] as? String
-        ialtura = valores["Altura"] as? Int
+        sUsuario=valores["Usuario"] as? String
+        sEmail=valores["Email"] as? String
+        sTelefono=valores["Telefono"] as? String
     }
     
     func getMap() -> [String:Any] {
-        return [
-            "nombre": sNombre as Any,
-            "apellido": sApellidos as Any,
-            "nacimiento": iFecha as Any,
-            "altura": ialtura as Any
-        ]
+        var mapTemp:[String:Any] = [:]
+        mapTemp["Usuario"] = sUsuario
+        mapTemp["Email"] = sEmail
+        mapTemp["Telefono"] = sTelefono
+        return mapTemp
     }
 }

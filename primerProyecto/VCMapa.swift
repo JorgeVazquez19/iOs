@@ -60,8 +60,8 @@ class VCMapa: UIViewController, CLLocationManagerDelegate, DataHolderDelegate {
     }
     
     func NuevaRegionMapa(lat: Double, longitude long:Double){
-        let miSpan:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.01,longitudeDelta: 0.01)
-        let puntoCentro:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        let miSpan:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1,longitudeDelta: 0.1)
+        let puntoCentro:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 40.4167, longitude: -3.70325)
         let miRegion:MKCoordinateRegion = MKCoordinateRegion(center: puntoCentro, span: miSpan)
         miMapa?.setRegion(miRegion, animated: true)
     }

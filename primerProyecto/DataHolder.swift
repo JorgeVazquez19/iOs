@@ -94,7 +94,7 @@ class DataHolder: NSObject {
     func perfilUsuario(){
     let user = Auth.auth().currentUser
     if let user = user {
-        let Nombre = user.displayName
+        let Usuario = user.displayName
         let photoURL = user.photoURL
         }
     }

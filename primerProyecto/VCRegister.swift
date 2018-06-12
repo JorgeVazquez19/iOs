@@ -17,8 +17,9 @@ class VCRegister: UIViewController, DataHolderDelegate{
     @IBOutlet var btnAceptar:UIButton?
     @IBOutlet var btnCancelar:UIButton?
     @IBOutlet var txtUsuario:UITextField?
-    @IBOutlet var txtRepetir:UITextField?
     @IBOutlet var Date:UIDatePicker?
+    @IBOutlet var Telefono:UITextField?
+    var miPerfil:Perfil = Perfil()
     
     
     override func viewDidLoad() {
@@ -33,6 +34,9 @@ class VCRegister: UIViewController, DataHolderDelegate{
     }
     @IBAction func clickAceptar(){
         DataHolder.sharedInstance.firebaseRegistro(withEmail: (txtNombre?.text)!, password: (txtContrasena?.text)!, delegate: self)
+        DataHolder.sharedInstance.miPerfil.sUsuario = txtUsuario?.text
+        DataHolder.sharedInstance.miPerfil.sEmail = txtNombre?.text
+        DataHolder.sharedInstance.miPerfil.sTelefono = Telefono?.text
         //DataHolder.sharedInstance.miPerfil.sNombre = "Jorge"
         //DataHolder.sharedInstance.miPerfil.iFecha = "1998"
         //DataHolder.sharedInstance.miPerfil.iAltura = "2"
