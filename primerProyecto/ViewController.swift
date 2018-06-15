@@ -14,30 +14,18 @@ class ViewController: UIViewController, DataHolderDelegate {
     @IBOutlet var txtUser:UITextField?
     @IBOutlet var txtPass:UITextField?
     @IBOutlet var btnLogin:UIButton?
+    @IBOutlet var btnRegister:UIButton?
     @IBOutlet var lblReintentar:UILabel?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.lblReintentar?.isHidden=true
-        // Do any additional setup after loading the view, typically from a nib.
-        //lblPrueba?.text = "Bienvenido!"
-       // txtUser?.text = DataHolder.sharedInstance.sNick
-        
-        /*Auth.auth().addStateDidChangeListener{ (auth, user) in
-            // ...
-            if user != nil{
-                self.performSegue(withIdentifier: "trLogin", sender: self)
-            }
-        }*/
+        self.btnLogin?.layer.cornerRadius = 15
+        self.btnRegister?.layer.cornerRadius = 15
+    
     }
-    /*
-    do{
-        try Auth.auth().signOut()
-    }catch{
-    
-    }*/
-    
+   
     
 
     override func didReceiveMemoryWarning() {
